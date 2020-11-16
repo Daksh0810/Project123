@@ -16,6 +16,9 @@
        // Draw the pie chart for the Daksh's pizza when Charts is loaded.
       google.charts.setOnLoadCallback(drawDakshChart);
 
+      // Draw the pie chart for the Arko's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawArkoChart);
+
       // Callback that draws the pie chart for Sarah's pizza.
       function drawSarahChart() {
 
@@ -91,6 +94,32 @@
         chart.draw(data, options);
       }
 
+        // Callback that draws the pie chart for Arko's pizza.
+      function drawArkoChart() {
+
+        // Create the data table for Arko's pizza.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 4],
+          ['Onions', 2],
+          ['Olives', 2],
+          ['Zucchini', 0],
+          ['Pepperoni', 3]
+        ]);
+
+        // Set options for Arko's pie chart.
+        var options = {title:'How Much Pizza Arko Ate Last Night',
+                       width:400,
+                       height:300};
+
+        // Instantiate and draw the chart for Arko's pizza.
+        var chart = new google.visualization.PieChart(document.getElementById('Arko_chart_div'));
+        chart.draw(data, options);
+      }
+
+
 </script>
 <!--Table and divs that hold the pie charts-->
 <table class="columns">
@@ -103,6 +132,9 @@
         </td>
         <td>
             <div id="Daksh_chart_div" style="border: 1px solid #ccc"></div>
+        </td>
+        <td>
+            <div id="Arko_chart_div" style="border: 1px solid #ccc"></div>
         </td>
     </tr>
 </table>
