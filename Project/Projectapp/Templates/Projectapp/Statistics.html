@@ -20,8 +20,8 @@
        // Draw the pie chart for the Device when Charts is loaded.
       google.charts.setOnLoadCallback(drawDeviceChart);
 
-      // Draw the pie chart for the Arko's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawArkoChart);
+      // Draw the pie chart for the Specs when Charts is loaded.
+      google.charts.setOnLoadCallback(drawSpecsChart);
 
       // Callback that draws the pie chart for age.
       function drawageChart() {
@@ -38,7 +38,7 @@
         ]);
 
         // Set options for age pie chart.
-        var options = {title:'number of people from different age groups',
+        var options = {title:'',
                        width:500,
                        height:300};
 
@@ -60,7 +60,7 @@
         ]);
 
         // Set options for  whether a student or not .
-        var options = {title:'Number of students',
+        var options = {title:'',
                        width:500,
                        height:300};
 
@@ -83,7 +83,7 @@
         ]);
 
         // Set options for Device pie chart.
-        var options = {title:'Which type of Device does people use?',
+        var options = {title:'',
                        width:400,
                        height:300};
 
@@ -92,30 +92,29 @@
         chart.draw(data, options);
       }
 
-        // Callback that draws the pie chart for Arko's pizza.
-      function drawArkoChart() {
+        // Callback that draws the pie chart for Specs.
+      function drawSpecsChart() {
 
-        // Create the data table for Arko's pizza.
+        // Create the data table for Specs.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Option');
+        data.addColumn('number', 'Number');
         data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
+          ['Yes', 55],
+          ['No', 43],
         ]);
 
-        // Set options for Arko's pie chart.
-        var options = {title:'How Much Pizza Arko Ate Last Night',
+        // Set options for Specs pie chart.
+        var options = {title:'',
                        width:400,
                        height:300};
 
-        // Instantiate and draw the chart for Arko's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Arko_chart_div'));
+        // Instantiate and draw the chart for Specs.
+        var chart = new google.visualization.PieChart(document.getElementById('Specs_chart_div'));
         chart.draw(data, options);
       }
+
+
 
 
 
@@ -137,6 +136,9 @@
         <td>
             <div id="student_chart_div" style="border: 1px solid #ccc"></div>
         </td>
+        <td>
+            <h1> Question 2
+        </td>
     <tr>
         <td>
             <div id="Device_chart_div" style="border: 1px solid #ccc"></div>
@@ -144,7 +146,7 @@
     </tr>
     <tr>
         <td>
-            <div id="Arko_chart_div" style="border: 1px solid #ccc"></div>
+            <div id="Specs_chart_div" style="border: 1px solid #ccc"></div>
         </td>
     </tr>
 </table>
