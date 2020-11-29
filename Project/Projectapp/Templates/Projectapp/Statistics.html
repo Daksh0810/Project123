@@ -18,7 +18,7 @@
       google.charts.setOnLoadCallback(drawstudentChart);
 
        // Draw the pie chart for the Device when Charts is loaded.
-      google.charts.setOnLoadCallback(drawDakshChart);
+      google.charts.setOnLoadCallback(drawDeviceChart);
 
       // Draw the pie chart for the Arko's pizza when Charts is loaded.
       google.charts.setOnLoadCallback(drawArkoChart);
@@ -87,8 +87,8 @@
                        width:400,
                        height:300};
 
-        // Instantiate and draw the chart for Daksh's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Daksh_chart_div'));
+        // Instantiate and draw the chart for Device.
+        var chart = new google.visualization.PieChart(document.getElementById('Device_chart_div'));
         chart.draw(data, options);
       }
 
@@ -139,7 +139,7 @@
         </td>
     <tr>
         <td>
-            <div id="Daksh_chart_div" style="border: 1px solid #ccc"></div>
+            <div id="Device_chart_div" style="border: 1px solid #ccc"></div>
         </td>
     </tr>
     <tr>
