@@ -17,7 +17,7 @@
       // Draw the pie chart for whether a student or not when Charts is loaded.
       google.charts.setOnLoadCallback(drawstudentChart);
 
-       // Draw the pie chart for the Daksh's pizza when Charts is loaded.
+       // Draw the pie chart for the Device when Charts is loaded.
       google.charts.setOnLoadCallback(drawDakshChart);
 
       // Draw the pie chart for the Arko's pizza when Charts is loaded.
@@ -69,23 +69,21 @@
         chart.draw(data, options);
       }
 
-      // Callback that draws the pie chart for Daksh's pizza.
-      function drawDakshChart() {
+      // Callback that draws the pie chart for Device.
+      function drawDeviceChart() {
 
-        // Create the data table for Daksh's pizza.
+        // Create the data table for Device.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Type of Device');
+        data.addColumn('number', 'No. of people using it');
         data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
+          ['Mobile Phone', 78],
+          ['iPad/ tablet', 3],
+          ['Laptop/ Computer', 17],
         ]);
 
-        // Set options for Daksh's pie chart.
-        var options = {title:'How Much Pizza Daksh Ate Last Night',
+        // Set options for Device pie chart.
+        var options = {title:'Which type of Device does people use?',
                        width:400,
                        height:300};
 
