@@ -20,6 +20,9 @@
        // Draw the pie chart for the Device when Charts is loaded.
       google.charts.setOnLoadCallback(drawDeviceChart);
 
+      // Draw the bar chart for the apps when Charts is loaded.
+      google.charts.setOnLoadCallback(drawappsChart);
+
       // Draw the pie chart for the Specs when Charts is loaded.
       google.charts.setOnLoadCallback(drawSpecsChart);
 
@@ -32,7 +35,7 @@
         data.addColumn('number', 'Number of people');
         data.addRows([
           ['Below 13', 3],
-          ['13-24', 73],
+          ['13-24', 72],
           ['25-50', 19],
           ['50+', 3],
         ]);
@@ -55,7 +58,7 @@
         data.addColumn('string', 'option');
         data.addColumn('number', 'Number of people');
         data.addRows([
-          ['Yes', 75],
+          ['Yes', 74],
           ['No', 23],
         ]);
 
@@ -79,12 +82,12 @@
         data.addRows([
           ['Mobile Phone', 78],
           ['iPad/ tablet', 3],
-          ['Laptop/ Computer', 17],
+          ['Laptop/ Computer', 16],
         ]);
 
         // Set options for Device pie chart.
         var options = {title:'',
-                       width:400,
+                       width:500,
                        height:300};
 
         // Instantiate and draw the chart for Device.
@@ -92,7 +95,44 @@
         chart.draw(data, options);
       }
 
-        // Callback that draws the pie chart for Specs.
+        // Callback that draws the bar chart for  apps.
+        function drawappsChart() {
+        var data = google.visualization.arrayToDataTable([
+           ["Application", "Frequently used by", { role: "style" } ],
+           ["Instagram", 29, "#C13584"],
+           ["Facebook", 1, "#4267B2"],
+           ["Discord", 2, "#738ADB"],
+           ["Among Us", 1, "Orange"],
+           ["Pinterest", 2, "#E60026"],
+           ["PUBG", 1, "#090907"],
+           ["Reddit", 1, "#FF4500"],
+           ["Snapchat", 3, "#FFFC00"],
+           ["WhatsApp", 34, "#4AC959"],
+           ["YouTube", 20, "#FF0000"],
+           ["Zoom", 3, "#1DA1F2"]
+      ]);
+
+         var view = new google.visualization.DataView(data);
+              view.setColumns([0, 1,
+                               { calc: "stringify",
+                                 sourceColumn: 1,
+                                 type: "string",
+                                 role: "annotation" },
+                               2]);
+
+      var options = {
+        title: "",
+        width: 500,
+        height: 300,
+        bar: {groupWidth: "50%"},
+        legend: { position: "none" },
+      };
+      // Instantiate and draw the chart for apps.
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+      }
+
+      // Callback that draws the pie chart for Specs.
       function drawSpecsChart() {
 
         // Create the data table for Specs.
@@ -100,7 +140,7 @@
         data.addColumn('string', 'Option');
         data.addColumn('number', 'Number');
         data.addRows([
-          ['Yes', 55],
+          ['Yes', 54],
           ['No', 43],
         ]);
 
@@ -109,7 +149,7 @@
                        width:400,
                        height:300};
 
-        // Instantiate and draw the chart for Specs.
+       // Instantiate and draw the chart for Specs.
         var chart = new google.visualization.PieChart(document.getElementById('Specs_chart_div'));
         chart.draw(data, options);
       }
@@ -119,8 +159,16 @@
 
 
 
+
+
+
+
+
+
+
+
 </script>
-<!--Table and divs that hold the pie charts-->
+<!--Table and divs that hold the pie charts and execute them-->
 <table class="columns">
     <tr>
         <td style="text align:center">
@@ -142,6 +190,11 @@
     <tr>
         <td>
             <div id="Device_chart_div" style="border: 1px solid #ccc"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="barchart_values" style="width: 500px; height: 300px;"></div>
         </td>
     </tr>
     <tr>
