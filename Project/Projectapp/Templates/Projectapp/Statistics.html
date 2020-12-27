@@ -1,6 +1,6 @@
 {% extends 'Projectapp/base.html' %}
 
-
+{% block content %}
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 
@@ -16,26 +16,8 @@
        // Draw the pie chart for the Daksh's pizza when Charts is loaded.
       google.charts.setOnLoadCallback(drawDakshChart);
 
-      // Draw the pie chart for the Aayush's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawAayushChart);
-
-      // Draw the pie chart for the Sameer's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawSameerChart);
-
-      // Draw the pie chart for the Manohar's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawManoharChart);
-
-      // Draw the pie chart for the Divya's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawDivyaChart);
-
-      // Draw the pie chart for the Rahul's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawRahulChart);
-
-      // Draw the pie chart for the Sabyasachi's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawSabyasachiChart);
-
-      // Draw the pie chart for the Nabanita's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawNabanitaChart);
+      // Draw the pie chart for the Arko's pizza when Charts is loaded.
+      google.charts.setOnLoadCallback(drawArkoChart);
 
       // Callback that draws the pie chart for Sarah's pizza.
       function drawSarahChart() {
@@ -137,159 +119,7 @@
         chart.draw(data, options);
       }
 
-      // Create the data table for Aayush's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
-        ]);
 
-        // Set options for Aayush's pie chart.
-        var options = {title:'How Much Pizza Aayush Ate Last Night',
-                       width:400,
-                       height:300};
-
-        // Instantiate and draw the chart for Aayush's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Aayush_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Create the data table for Sameer's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
-        ]);
-
-        // Set options for Sameer's pie chart.
-        var options = {title:'How Much Pizza Sameer Ate Last Night',
-                       width:400,
-                       height:300};
-
-        // Instantiate and draw the chart for Sameer's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Sameer_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Create the data table for Manohar's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
-        ]);
-
-        // Set options for Manohar's pie chart.
-        var options = {title:'How Much Pizza Manohar Ate Last Night',
-                       width:400,
-                       height:300};
-
-        // Instantiate and draw the chart for Manohar's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Manohar_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Create the data table for Divya's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
-        ]);
-
-        // Set options for Divya's pie chart.
-        var options = {title:'How Much Pizza Divya Ate Last Night',
-                       width:400,
-                       height:300};
-
-        // Instantiate and draw the chart for 's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Divya_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Create the data table for Rahul's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
-        ]);
-
-        // Set options for Rahul's pie chart.
-        var options = {title:'How Much Pizza Rahul Ate Last Night',
-                       width:400,
-                       height:300};
-
-        // Instantiate and draw the chart for Rahul's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Rahul_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Create the data table for Sabyasachi's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
-        ]);
-
-        // Set options for Sabyasachi's pie chart.
-        var options = {title:'How Much Pizza Sabyasachi Ate Last Night',
-                       width:400,
-                       height:300};
-
-        // Instantiate and draw the chart for Sabyasachi's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Sabyasachi_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Create the data table for Nabanita's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
-        ]);
-
-        // Set options for Nabanita's pie chart.
-        var options = {title:'How Much Pizza Nabanita Ate Last Night',
-                       width:400,
-                       height:300};
-
-        // Instantiate and draw the chart for Nabanita's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Nabanita_chart_div'));
-        chart.draw(data, options);
-      }
 </script>
 <!--Table and divs that hold the pie charts-->
 <table class="columns">
@@ -306,23 +136,6 @@
         <td>
             <div id="Arko_chart_div" style="border: 1px solid #ccc"></div>
         </td>
-        <td>
-            <div id="Aayush_chart_div" style="border: 1px solid #ccc"></div>
-        </td>
-        <td>
-            <div id="Sameer_chart_div" style="border: 1px solid #ccc"></div>
-        </td>
-        <td>
-            <div id="Manohar_chart_div" style="border: 1px solid #ccc"></div>
-        </td>
-        <td>
-            <div id="Divya_chart_div" style="border: 1px solid #ccc"></div>
-        </td>
-        <td>
-            <div id="Sabyasachi_chart_div" style="border: 1px solid #ccc"></div>
-        </td>
-        <td>
-            <div id="Nabanita_chart_div" style="border: 1px solid #ccc"></div>
-        </td>
     </tr>
 </table>
+{% endblock %}
