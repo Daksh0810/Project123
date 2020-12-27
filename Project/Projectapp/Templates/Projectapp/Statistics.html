@@ -1,140 +1,205 @@
 {% extends 'Projectapp/base.html' %}
 
 {% block content %}
+<h1 style="text-align:center; text-decoration:underline">
+    Question-wise analysis of data
+</h1>
+<br>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 
       // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
 
-      // Draw the pie chart for Sarah's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawSarahChart);
+      // Draw the pie chart for age when Charts is loaded.
+      google.charts.setOnLoadCallback(drawageChart);
 
-      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawAnthonyChart);
+      // Draw the pie chart for whether a student or not when Charts is loaded.
+      google.charts.setOnLoadCallback(drawstudentChart);
 
-       // Draw the pie chart for the Daksh's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawDakshChart);
+       // Draw the pie chart for the Device when Charts is loaded.
+      google.charts.setOnLoadCallback(drawDeviceChart);
 
-      // Draw the pie chart for the Arko's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawArkoChart);
+      // Draw the bar chart for the apps when Charts is loaded.
+      google.charts.setOnLoadCallback(drawappsChart);
 
-      // Callback that draws the pie chart for Sarah's pizza.
-      function drawSarahChart() {
+      // Draw the pie chart for the Specs when Charts is loaded.
+      google.charts.setOnLoadCallback(drawSpecsChart);
 
-        // Create the data table for Sarah's pizza.
+      // Callback that draws the pie chart for age.
+      function drawageChart() {
+
+        // Create the data table for age.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Age Category');
+        data.addColumn('number', 'Number of people');
         data.addRows([
-          ['Mushrooms', 1],
-          ['Onions', 1],
-          ['Olives', 2],
-          ['Zucchini', 2],
-          ['Pepperoni', 1]
+          ['Below 13', 3],
+          ['13-24', 72],
+          ['25-50', 19],
+          ['50+', 3],
         ]);
 
-        // Set options for Sarah's pie chart.
-        var options = {title:'How Much Pizza Sarah Ate Last Night',
-                       width:400,
+        // Set options for age pie chart.
+        var options = {title:'',
+                       width:500,
                        height:300};
 
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+        // Instantiate and draw the chart for age.
+        var chart = new google.visualization.PieChart(document.getElementById('age_chart_div'));
         chart.draw(data, options);
       }
 
-      // Callback that draws the pie chart for Anthony's pizza.
-      function drawAnthonyChart() {
+      // Callback that draws the pie chart for  whether a student or not .
+      function drawstudentChart() {
 
-        // Create the data table for Anthony's pizza.
+        // Create the data table for  whether a student or not .
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'option');
+        data.addColumn('number', 'Number of people');
         data.addRows([
-          ['Mushrooms', 2],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
+          ['Yes', 74],
+          ['No', 23],
         ]);
 
-        // Set options for Anthony's pie chart.
-        var options = {title:'How Much Pizza Anthony Ate Last Night',
-                       width:400,
+        // Set options for  whether a student or not .
+        var options = {title:'',
+                       width:500,
                        height:300};
 
-        // Instantiate and draw the chart for Anthony's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+        // Instantiate and draw the chart for  whether a student or not .
+        var chart = new google.visualization.PieChart(document.getElementById('student_chart_div'));
         chart.draw(data, options);
       }
 
-      // Callback that draws the pie chart for Daksh's pizza.
-      function drawDakshChart() {
+      // Callback that draws the pie chart for Device.
+      function drawDeviceChart() {
 
-        // Create the data table for Daksh's pizza.
+        // Create the data table for Device.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Type of Device');
+        data.addColumn('number', 'No. of people using it');
         data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
+          ['Mobile Phone', 78],
+          ['iPad/ tablet', 3],
+          ['Laptop/ Computer', 16],
         ]);
 
-        // Set options for Daksh's pie chart.
-        var options = {title:'How Much Pizza Daksh Ate Last Night',
-                       width:400,
+        // Set options for Device pie chart.
+        var options = {title:'',
+                       width:500,
                        height:300};
 
-        // Instantiate and draw the chart for Daksh's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Daksh_chart_div'));
+        // Instantiate and draw the chart for Device.
+        var chart = new google.visualization.PieChart(document.getElementById('Device_chart_div'));
         chart.draw(data, options);
       }
 
-        // Callback that draws the pie chart for Arko's pizza.
-      function drawArkoChart() {
+        // Callback that draws the bar chart for  apps.
+        function drawappsChart() {
+        var data = google.visualization.arrayToDataTable([
+           ["Application", "Frequently used by", { role: "style" } ],
+           ["Instagram", 29, "#C13584"],
+           ["Facebook", 1, "#4267B2"],
+           ["Discord", 2, "#738ADB"],
+           ["Among Us", 1, "Orange"],
+           ["Pinterest", 2, "#E60026"],
+           ["PUBG", 1, "#090907"],
+           ["Reddit", 1, "#FF4500"],
+           ["Snapchat", 3, "#FFFC00"],
+           ["WhatsApp", 34, "#4AC959"],
+           ["YouTube", 20, "#FF0000"],
+           ["Zoom", 3, "#1DA1F2"]
+      ]);
 
-        // Create the data table for Arko's pizza.
+         var view = new google.visualization.DataView(data);
+              view.setColumns([0, 1,
+                               { calc: "stringify",
+                                 sourceColumn: 1,
+                                 type: "string",
+                                 role: "annotation" },
+                               2]);
+
+      var options = {
+        title: "",
+        width: 500,
+        height: 300,
+        bar: {groupWidth: "50%"},
+        legend: { position: "none" },
+      };
+      // Instantiate and draw the chart for apps.
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+      }
+
+      // Callback that draws the pie chart for Specs.
+      function drawSpecsChart() {
+
+        // Create the data table for Specs.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Option');
+        data.addColumn('number', 'Number');
         data.addRows([
-          ['Mushrooms', 4],
-          ['Onions', 2],
-          ['Olives', 2],
-          ['Zucchini', 0],
-          ['Pepperoni', 3]
+          ['Yes', 54],
+          ['No', 43],
         ]);
 
-        // Set options for Arko's pie chart.
-        var options = {title:'How Much Pizza Arko Ate Last Night',
+        // Set options for Specs pie chart.
+        var options = {title:'',
                        width:400,
                        height:300};
 
-        // Instantiate and draw the chart for Arko's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Arko_chart_div'));
+       // Instantiate and draw the chart for Specs.
+        var chart = new google.visualization.PieChart(document.getElementById('Specs_chart_div'));
         chart.draw(data, options);
       }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
-<!--Table and divs that hold the pie charts-->
+<!--Table and divs that hold the pie charts and execute them-->
 <table class="columns">
     <tr>
-        <td>
-            <div id="Sarah_chart_div" style="border: 1px solid #ccc"></div>
+        <td style="text align:center">
+            <div id="age_chart_div" style="border: 1px solid #ccc"></div>
         </td>
         <td>
-            <div id="Anthony_chart_div" style="border: 1px solid #ccc"></div>
+            <h1>Question 1: How old are You?</h1>
+            <br>
+            <p>The pie chart on the left shows that the people who filled the survey belonged to which age group.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="student_chart_div" style="border: 1px solid #ccc"></div>
         </td>
         <td>
-            <div id="Daksh_chart_div" style="border: 1px solid #ccc"></div>
+            <h1> Question 2
         </td>
+    <tr>
         <td>
-            <div id="Arko_chart_div" style="border: 1px solid #ccc"></div>
+            <div id="Device_chart_div" style="border: 1px solid #ccc"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="barchart_values" style="width: 500px; height: 300px;"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="Specs_chart_div" style="border: 1px solid #ccc"></div>
         </td>
     </tr>
 </table>
